@@ -26,7 +26,7 @@ weekly <- cbind.data.frame(weeks, desc)
 guests <- read_csv("data/EpistemasGuests.csv")
 #guests$pregrado <- as.factor(guests$pregrado)
 #guests$stem <- as.factor(guests$stem)
-#guests$nacionalidad <- as.factor(guests$nacionalidad)
+guests$nacionalidad <- as.factor(guests$nacionalidad)
 
 streams_paises <- read_csv("data/EpistemasPaisStr.csv")
 
@@ -91,6 +91,7 @@ navbarPage(title = h3("Rompiendo estereotipos de la ciencia en español", style 
                       column(7,
                              fluidRow(
                                plotlyOutput("streamspaises"),
+                               #"Probando este texto",
                                plotlyOutput("descargas_mapa")
                              )),
                       column(5, 
@@ -156,7 +157,8 @@ navbarPage(title = h3("Rompiendo estereotipos de la ciencia en español", style 
                                                 icon = icon("instagram"),
                                                 color = "fuchsia",
                                                 width = 6, 
-                                                fill = T),
+                                                fill = T,
+                                                href = "https://www.instagram.com/epistemas"),
                                         infoBox(title = "Instagram",
                                                 value = redes[6,2],
                                                 subtitle = "Alcance (# de cuentas del mes anterior)",
@@ -210,15 +212,15 @@ navbarPage(title = h3("Rompiendo estereotipos de la ciencia en español", style 
                    style = "padding: 10px; ",
                    
                    fluidRow(
-                     column(6,
+                     column(5,
                             fluidRow(
-                              plotlyOutput("invitados_mapa")
+                              plotlyOutput("invitados")
                             )),
-                     column(6, 
+                     column(7, 
                             #offset = 1,
                             fluidRow(
                               plotOutput("treemap",
-                                         height = "80vh")
+                                         height = "70vh")
                             ) #close fluidrow
                      ) #close column
                    ) #close fluidRow
@@ -451,51 +453,31 @@ server <- function(input, output){
   })
   
   
-  output$invitados_mapa <- renderPlotly({
+  output$invitados <- renderPlotly({
     
-    # specify map projection/options
-    g <- list(
-      showframe = T,
-      showland = T,
-      landcolor = toRGB("grey70"),
-      showocean = T,
-      oceancolor = toRGB("LightBlue"),
-      showlakes = T,
-      lakecolor = toRGB("LightBlue"),
-      showcoastlines = T,
-      coastlinecolor = toRGB("#171717"),
-      showcountries = T,
-      countrycolor = toRGB("#171717"),
-      countrywidth = 0.2,
-      resolution = 20,
-      fitbounds = "locations",
-      center = list(lon = -55, lat = 14),
-      #     projection = list(type = 'natural earth')
-      #      projection = list(type = 'orthographic')
-      projection = list(type = 'winkel tripel', scale=4)
-    )
-    
-    formap <- guests %>%
-      group_by(nacionalidad, code) %>%
-      summarize(n =n())
-    
-    map <- plot_geo(formap,
-                    type = "choropleth",
-                    locations = formap$code,
-                    z = formap$n,
-                    showscale = F,
-                    colors = c("#f5dd3a","#6bcbe3"),
-                    marker = list(line = list(color = toRGB("#986538"), width = 0.5)),
-                    colorbar = list(xpad = 0,
-                                    ypad = 0)) %>%
-      layout(geo=g,
-             margin = list(t=30,r= 0,b= 0,l= 0),
+    guests %>%
+      group_by(nacionalidad) %>%
+      summarize(n = n()) %>%
+      arrange(desc(n)) %>%
+      plot_ly(y = ~nacionalidad, 
+              x = ~n, 
+              color = ~nacionalidad, 
+              type = "bar", 
+              colors = c("#f5dd3a","#6bcbe3"),
+              showlegend = F) %>%
+      layout(font = list(color = "#858585"),
+             title = list(text = "Nuestros invitados son de:",
+                          x = 0.1,
+                          font = list(size = 14, color = "#ffffff")),
+             xaxis = list(title = "Personas",
+                          font = list(size = 10),
+                          gridcolor = "#353535"),
+             yaxis = list(title = " ",
+                          font = list(color = "#858585")),
              paper_bgcolor = "#171717",
              plot_bgcolor = "#171717",
-             title = list(text = "De donde son nuestros invitados e invitadas",
-                          x = 0.2,
-                          font = list(size = 14, color = "#ffffff")))
-    map
+             margin = list(t= 50,r= 10,b= 30,l= 10))
+
   })
   
   
