@@ -1,24 +1,24 @@
 ﻿Pais,region,code,Spotify,Ivoox
-Guatemala,Guatemala,GTM,2980,738
-Estados Unidos,United States of America,USA,198,1213
+Guatemala,Guatemala,GTM,3126,807
+Estados Unidos,United States of America,USA,243,1367
 Corea del Sur,South Korea,KOR,0,107
-Colombia,Colombia,COL,113,105
-Alemania,Germany,DEU,279,84
-Bélgica,Belgium,BEL,33,72
-Francia,France,FRA,8,72
-España,Spain,ESP,15,38
-México,Mexico,MEX,139,32
-Uruguay,Uruguay,URY,17,31
-Costa Rica,Costa Rica,CRI,60,22
-El Salvador,El Salvador,SLV,103,22
-Rusia,Russia,RUS,0,14
-Brasil,Brazil,BRA,6,13
-Argentina,Argentina,ARG,47,12
+Colombia,Colombia,COL,124,105
+Alemania,Germany,DEU,291,92
+Bélgica,Belgium,BEL,33,76
+Francia,France,FRA,8,81
+España,Spain,ESP,20,42
+México,Mexico,MEX,149,38
+Uruguay,Uruguay,URY,19,31
+Costa Rica,Costa Rica,CRI,62,22
+El Salvador,El Salvador,SLV,112,22
+Rusia,Russia,RUS,0,15
+Brasil,Brazil,BRA,8,13
+Argentina,Argentina,ARG,49,12
 Canadá,Canada,CAN,21,10
 Irlanda,Ireland,IRL,0,10
 Perú,Peru,PER,30,10
 Austria,Austria,AUT,70,8
-Chile,Chile,CHL,47,7
+Chile,Chile,CHL,55,8
 Australia,Australia,AUS,9,6
 Gran Bretaña,United Kingdom,GBR,13,5
 South Africa,South Africa,ZAF,0,5
@@ -32,7 +32,7 @@ Portugal,Portugal,PRT,0,2
 Venezuela,Venezuela,VEN,0,2
 República Checa,Czech Republic,CZE,0,1
 Dinamarca,Denmark,DNK,0,1
-Italia,Italy,ITA,6,1
+Italia,Italy,ITA,7,1
 Polonia,Poland,POL,0,1
 Singapur,Singapore,SGP,0,1
 Países Bajos,Netherlands,NLD,21,0
@@ -40,7 +40,7 @@ Bolivia,Bolivia,BOL,18,0
 Suiza,Switzerland,CHE,7,0
 Paraguay,Paraguay,PRY,2,0
 Tunisia,Tunisia,TUN,1,0
-Panamá,Panama,PAN,2,0
+Panamá,Panama,PAN,2,3
 República Dominicana,Dominican Republic,DOM,2,0
 Turquía,Turkey,TUR,2,0
-UNKNOWN,UNKNOWN,,14,0
+UNKNOWN,UNKNOWN,,15,0

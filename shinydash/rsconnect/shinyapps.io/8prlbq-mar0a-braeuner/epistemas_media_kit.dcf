@@ -5,9 +5,9 @@ account: 8prlbq-mar0a-braeuner
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 6733580
-bundleId: 6219634
+bundleId: 6254977
 url: https://braeunerd.shinyapps.io/epistemas_media_kit/
-when: 1660954007.76498
-lastSyncTime: 1660954007.76597
+when: 1661941857.18288
+lastSyncTime: 1661941857.18288
 asMultiple: FALSE
 asStatic: FALSE

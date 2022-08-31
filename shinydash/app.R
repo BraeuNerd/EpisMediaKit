@@ -6,7 +6,6 @@ library(tidyverse)
 library(treemapify)
 library(rnaturalearth)
 library(plotly)
-library(leaflet)
 library(ggraph)
 library(igraph)
 
@@ -42,7 +41,7 @@ edad <- read_csv("data/EpistemasEdad.csv")
 
 ui <- fluidPage(
   tags$h2(a(img(src = "epiSTEMas_Logo.png", href = "https://www.epistemas.com", height = 90, width = 90), "Epistemas Media Kit",href = "https://www.epistemas.com", style = "margin: 0; ")), 
-  tags$text("última actualización de datos: 02 de agosto 2022", style = "font-size: 14px; color: #858585; "),
+  tags$text("última actualización de datos: 31 de agosto 2022", style = "font-size: 14px; color: #858585; "),
   
   setBackgroundColor(color = "#000000"),
   useShinydashboard(),
@@ -81,27 +80,10 @@ ui <- fluidPage(
 
 # Start pages & tabs ---
 
-navbarPage(title = h3("Rompiendo estereotipos de la ciencia en español", style = "font-size: 90%; color: #000000"),
+navbarPage(
+  title = h3(" ", style = "font-size: 90%; color: #000000"),
            windowTitle = "EpiSTEMas Media Kit",
-           
-           tabPanel(tags$text("Quiénes nos escuchan", style = "font-size: 100%"), icon = icon("globe-americas"),
-                    style = "padding: 10px; ",
-                    
-                    fluidRow(
-                      column(7,
-                             fluidRow(
-                               plotlyOutput("streamspaises"),
-                               #"Probando este texto",
-                               plotlyOutput("descargas_mapa")
-                             )),
-                      column(5, 
-                             fluidRow(
-                               plotlyOutput("edad"),
-                               plotlyOutput("donut")
-                             ) #close fluidrow
-                      ) #close column
-                    ) #close fluidRow
-           ), #close first tabPanel
+      
            
            tabPanel(tags$text("Cómo nos encuentran", style = "font-size: 100%"), icon = icon("map"),
                     
@@ -117,14 +99,16 @@ navbarPage(title = h3("Rompiendo estereotipos de la ciencia en español", style 
                                                 icon = icon("spotify"),
                                                 color = "green",
                                                 width = 6, 
-                                                fill = T),
+                                                fill = T,
+                                                href = "https://open.spotify.com/show/6lflzlFqQRKjaKiXojsQGV?si=dac922f311304fae"),
                                         infoBox(title = "Otras plataformas",
                                                 value = sum(26+2+19+7),
-                                                subtitle = "(Apple, Google, Castbox, y otras.)",
+                                                subtitle = "(ivoox, Apple, Google, etc.)",
                                                 icon = icon("microphone"),
                                                 color = "purple",
                                                 width = 6,
-                                                fill = T)
+                                                fill = T,
+                                                href = "https://www.ivoox.com/podcast-epistemas_sq_f11241617_1.html")
                                     ), #close box1,
                                     box(title = "Alcance de nuestros sitios:",
                                         width = 12,
@@ -136,14 +120,16 @@ navbarPage(title = h3("Rompiendo estereotipos de la ciencia en español", style 
                                                 icon = icon("link"),
                                                 color = "aqua",
                                                 width = 6, 
-                                                fill = T),
+                                                fill = T,
+                                                href = "https://www.epistemas.com"),
                                         infoBox(title = "Boletín",
                                                 value = redes[2,2],
                                                 subtitle = "Suscripciones (open rate %)",
                                                 icon = icon("newspaper"),
                                                 color = "yellow",
                                                 width = 6,
-                                                fill = T)
+                                                fill = T,
+                                                href = "https://us1.campaign-archive.com/home/?u=431ae09cd575d1b9abc5a34f5&id=b13d64af36")
                                     ) #close box2
                              ), #close column
                              column(6,
@@ -172,7 +158,8 @@ navbarPage(title = h3("Rompiendo estereotipos de la ciencia en español", style 
                                                 icon = icon("facebook"),
                                                 color = "blue",
                                                 width = 6, 
-                                                fill = T),
+                                                fill = T,
+                                                href = "https://www.facebook.com/epiSTEMasPod/"),
                                         infoBox(title = "Facebook",
                                                 value = redes[9,2],
                                                 subtitle = "Alcance (# cuentas del mes anterior)",
@@ -186,17 +173,37 @@ navbarPage(title = h3("Rompiendo estereotipos de la ciencia en español", style 
                                                 icon = icon("twitter"),
                                                 color = "light-blue",
                                                 width = 6, 
-                                                fill = T),
+                                                fill = T,
+                                                href = "https://twitter.com/epiSTEMas_Pod"),
                                         infoBox(title = "LinkedIn",
                                                 value = redes[11,2],
                                                 subtitle = "Seguidores",
                                                 icon = icon("linkedin"),
                                                 color = "navy",
                                                 width = 6,
-                                                fill = T)
+                                                fill = T,
+                                                href = "https://www.linkedin.com/company/epistemas-podcast/")
                                     ) #close box
                              ) #close second column
                     ), #close main fluidRow
+           ), #close first tabPanel
+           
+           tabPanel(tags$text("Quiénes nos escuchan", style = "font-size: 100%"), icon = icon("globe-americas"),
+                    style = "padding: 10px; ",
+                    
+                    fluidRow(
+                      column(7,
+                             fluidRow(
+                               plotlyOutput("streamspaises"),
+                               plotlyOutput("descargas_mapa")
+                             )),
+                      column(5, 
+                             fluidRow(
+                               plotlyOutput("edad"),
+                               plotlyOutput("donut")
+                             ) #close fluidrow
+                      ) #close column
+                    ) #close fluidRow
            ), #close first tabPanel
            
            tabPanel(tags$text("Cuándo nos escuchan", style = "font-size: 100%"), icon = icon("headphones-alt"),
@@ -212,11 +219,11 @@ navbarPage(title = h3("Rompiendo estereotipos de la ciencia en español", style 
                    style = "padding: 10px; ",
                    
                    fluidRow(
-                     column(5,
+                     column(6,
                             fluidRow(
                               plotlyOutput("invitados")
                             )),
-                     column(7, 
+                     column(6, 
                             #offset = 1,
                             fluidRow(
                               plotOutput("treemap",
@@ -230,8 +237,6 @@ navbarPage(title = h3("Rompiendo estereotipos de la ciencia en español", style 
 ) #close navbarPage
 )
 
-
-#TO DO> ADD HREF TO VALUEBOXES!!!
 
 
 # Server component -------------------
@@ -272,31 +277,32 @@ server <- function(input, output){
 
   
   output$descargas_mapa <- renderPlotly({
-    #text on hover
+        #text on hover
     streams_paises$hover <- with(streams_paises, paste(Pais, '<br>',
                                                        "Spotify", Spotify, "<br>",
                                                        "Otras plataformas", Ivoox))
+    
 
     # specify map projection/options
     g <- list(
-      showframe = T,
+      showframe = F,
       showland = T,
-      landcolor = toRGB("grey70"),
+      landcolor = toRGB("grey80"),
       showocean = T,
-      oceancolor = toRGB("LightBlue"),
+      oceancolor = toRGB("#171717"),
       showlakes = T,
-      lakecolor = toRGB("LightBlue"),
+      lakecolor = toRGB("#171717"),
       showcoastlines = T,
       coastlinecolor = toRGB("#171717"),
       showcountries = T,
       countrycolor = toRGB("#171717"),
-      countrywidth = 0.2,
-      resolution = 20,
-      fitbounds = "locations",
-      center = list(lon = -55, lat = 14),
-#     projection = list(type = 'natural earth')
+      countrywidth = 0.1,
+      resolution = 50
+#      fitbounds = "locations",
+#      center = list(lon = -55, lat = 14)
+#      projection = list(type = 'natural earth')
 #      projection = list(type = 'orthographic')
-      projection = list(type = 'winkel tripel', scale=4)
+#      projection = list(type = 'winkel tripel', scale=4)
     )
     
     map <- plot_geo(streams_paises,
@@ -314,7 +320,7 @@ server <- function(input, output){
              paper_bgcolor = "#171717",
              plot_bgcolor = "#171717",
              title = list(text = "Todos los paises en donde nos han escuchado:",
-                          x = 0.2,
+                          x = 0.1,
                           font = list(size = 14, color = "#ffffff")))
     map
   })
@@ -444,10 +450,11 @@ server <- function(input, output){
           gridcolor = '#171717'),
         paper_bgcolor = "#171717",
         plot_bgcolor = "#171717",
-        font = list(color = "#858585"),
-        legend = list(x = 0.05, y = 0.95),
-        title = list(text = "En promedio tenemos  100 descargas por semana", 
-                     font = list(size = 14, color = "#858585")),
+        font = list(color = "#959595"),
+        legend = list(x = 0.05, y = 0.95,
+                      font = list(size = 18)),
+        title = list(text = "En promedio tenemos 100 descargas por semana", 
+                     font = list(size = 14, color = "#959595")),
         margin = list(t= 50,r= 80,b= 20,l= 70))
 
   })
@@ -455,31 +462,78 @@ server <- function(input, output){
   
   output$invitados <- renderPlotly({
     
-    guests %>%
-      group_by(nacionalidad) %>%
-      summarize(n = n()) %>%
-      arrange(desc(n)) %>%
-      plot_ly(y = ~nacionalidad, 
-              x = ~n, 
-              color = ~nacionalidad, 
-              type = "bar", 
-              colors = c("#f5dd3a","#6bcbe3"),
-              showlegend = F) %>%
-      layout(font = list(color = "#858585"),
-             title = list(text = "Nuestros invitados son de:",
-                          x = 0.1,
-                          font = list(size = 14, color = "#ffffff")),
-             xaxis = list(title = "Personas",
-                          font = list(size = 10),
-                          gridcolor = "#353535"),
-             yaxis = list(title = " ",
-                          font = list(color = "#858585")),
+    formap <- guests %>%
+          group_by(nacionalidad, code) %>%
+          summarize(n = n()) %>%
+          arrange(desc(n)) 
+     
+    #specify map projection/options
+    
+     ginv <- list(
+      showframe = F,
+      showland = T,
+      landcolor = toRGB("grey80"),
+      showocean = T,
+      oceancolor = toRGB("#171717"),
+      showlakes = T,
+      lakecolor = toRGB("#171717"),
+      showcoastlines = T,
+      coastlinecolor = toRGB("#171717"),
+      showcountries = T,
+      countrycolor = toRGB("#171717"),
+      countrywidth = 0.1,
+      resolution = 50
+    #  fitbounds = "locations"
+#      center = list(lon = -55, lat = 0, zoom = 3)
+      #     projection = list(type = 'natural earth')
+      #      projection = list(type = 'orthographic')
+      #      projection = list(type = 'winkel tripel', scale=4)
+    )
+    
+    mapinv <- plot_geo(formap,
+                    type = "choropleth",
+                    locations = formap$code,
+                    z = formap$n,
+                    showscale = F,
+                    colors = c("#f5dd3a","#6bcbe3"),
+                    marker = list(line = list(color = toRGB("#986538"), width = 0.5)),
+                    colorbar = list(xpad = 0,
+                                    ypad = 0)) %>%
+      layout(geo=ginv,
+             margin = list(t=50,r= 0,b= 0,l= 0),
              paper_bgcolor = "#171717",
              plot_bgcolor = "#171717",
-             margin = list(t= 50,r= 10,b= 30,l= 10))
-
+             title = list(text = "Nacionalidades y profesiones (temas de los que hemos hablado) de nuestros invitados:",
+                          x = 0.1,
+                          font = list(size = 14, color = "#ffffff")))
+    mapinv
+    
+    
+#    guests %>%
+#      group_by(nacionalidad) %>%
+#      summarize(n = n()) %>%
+#      arrange(desc(n)) %>%
+#      plot_ly(y = ~nacionalidad, 
+#              x = ~n, 
+#              color = ~nacionalidad, 
+ #             type = "bar", 
+  #            colors = c("#f5dd3a","#6bcbe3"),
+   #           showlegend = F) %>%
+    #  layout(font = list(color = "#858585"),
+     #        title = list(text = "Nuestros invitados son de:",
+    #                      x = 0.1,
+    #                      font = list(size = 14, color = "#ffffff")),
+    #         xaxis = list(title = "Personas",
+    #                      font = list(size = 10),
+    #                      gridcolor = "#353535"),
+     #        yaxis = list(title = " ",
+      #                    font = list(color = "#858585")),
+      #       paper_bgcolor = "#171717",
+       #      plot_bgcolor = "#171717",
+        #     margin = list(t= 50,r= 10,b= 30,l= 10))
+    
+    
   })
-  
   
   
   output$treemap <- renderPlot({
@@ -494,13 +548,15 @@ server <- function(input, output){
       geom_treemap(start = "topleft", layout = "srow") +
       geom_treemap_subgroup2_border(color = "#171717", size = 0.1, start = "topleft", layout = "srow") +
       geom_treemap_subgroup_border(color = "#171717", size = 0, start = "topleft", layout = "srow") +
-      geom_treemap_subgroup_text(color = "#000000", alpha = 0.1, angle = 30, grow=T, place = "center", fontface="italic", start = "topleft", layout = "srow") +
+      geom_treemap_subgroup_text(color = "#555555", alpha = 0.07, angle = 25, grow=T, place = "center", fontface="italic", start = "topleft", layout = "srow") +
       geom_treemap_subgroup2_text(color = "#000000", alpha = 0.9, size = 15, reflow=T, place = "center", fontface="bold", start = "topleft", layout = "srow") +
       scale_fill_manual(values = c("#f5dd3a", "#986538", "#f5dd3a", "#6bcbe3"))+
       theme(legend.position = "none",
-            plot.background = element_rect(fill = "#000000", color = "#000000"),
-            panel.background = element_rect(fill = "#000000")
+            plot.background = element_rect(fill = "#171717", color = "#171717"),
+            panel.background = element_rect(fill = "#171717")
             )
+    
+    
   })
   
 }
