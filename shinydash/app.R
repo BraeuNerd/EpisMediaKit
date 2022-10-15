@@ -84,7 +84,7 @@ navbarPage(
   title = h3(" ", style = "font-size: 90%; color: #000000"),
            windowTitle = "EpiSTEMas Media Kit",
       
-           
+  # Primera pag./tab
            tabPanel(tags$text("Cómo nos encuentran", style = "font-size: 100%"), icon = icon("map"),
                     
                     fluidRow(style = "padding: 50px;",
@@ -188,6 +188,8 @@ navbarPage(
                     ), #close main fluidRow
            ), #close first tabPanel
            
+  
+  # Segunda pag/tab
            tabPanel(tags$text("Quiénes nos escuchan", style = "font-size: 100%"), icon = icon("globe-americas"),
                     style = "padding: 10px; ",
                     
@@ -206,6 +208,8 @@ navbarPage(
                     ) #close fluidRow
            ), #close first tabPanel
            
+  
+  # Tercera pag/tab
            tabPanel(tags$text("Cuándo nos escuchan", style = "font-size: 100%"), icon = icon("headphones-alt"),
                     style = "padding: 20px; ",
                     
@@ -215,6 +219,8 @@ navbarPage(
                     ) #close fluidrow
            ), #close tabPanel
 
+  
+  # Cuarta pag/tab
           tabPanel(tags$text("Nuestr@s Invitad@s", style = "font-size: 100%"), icon = icon("globe-americas"),
                    style = "padding: 10px; ",
                    
@@ -248,6 +254,8 @@ server <- function(input, output){
     summarize(value = sum(desc))
   
   
+# Bar plot de paises dond emas nos esuchan
+  
   output$streamspaises <- renderPlotly({
     
     streams_paises %>%
@@ -275,6 +283,8 @@ server <- function(input, output){
     
   })
 
+
+# Mapa de paises en donde nos han escuchado
   
   output$descargas_mapa <- renderPlotly({
         #text on hover
@@ -325,8 +335,9 @@ server <- function(input, output){
     map
   })
   
-  
-  
+ 
+   
+# Bar plot audiencia por edad
   
   output$edad <- renderPlotly({
     
@@ -352,6 +363,9 @@ server <- function(input, output){
              ) #close layout
     
   })
+  
+  
+# Donut plot audiencia por genero
   
   output$donut <- renderPlotly({
     
@@ -379,6 +393,10 @@ server <- function(input, output){
                         font = list(size = 14, color = "#ffffff")))
   
   })
+  
+  
+  
+# Streams time series
   
   output$streamsts <- renderPlotly({
     
@@ -460,6 +478,9 @@ server <- function(input, output){
   })
   
   
+  
+# Mapa de donde son nuestros invitados
+  
   output$invitados <- renderPlotly({
     
     formap <- guests %>%
@@ -535,6 +556,9 @@ server <- function(input, output){
     
   })
   
+  
+  
+# Treemap de temas
   
   output$treemap <- renderPlot({
     
