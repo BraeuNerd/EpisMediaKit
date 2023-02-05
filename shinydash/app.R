@@ -41,7 +41,7 @@ edad <- read_csv("data/EpistemasEdad.csv")
 
 ui <- fluidPage(
   tags$h2(a(img(src = "epiSTEMas_Logo.png", href = "https://www.epistemas.com", height = 90, width = 90), "Epistemas Media Kit",href = "https://www.epistemas.com", style = "margin: 0; ")), 
-  tags$text("última actualización de datos: 03 de diciembre 2022", style = "font-size: 14px; color: #858585; "),
+  tags$text("última actualización de datos: 29 de enero 2023", style = "font-size: 14px; color: #858585; "),
   
   setBackgroundColor(color = "#000000"),
   useShinydashboard(),
@@ -341,16 +341,18 @@ server <- function(input, output){
   
   output$edad <- renderPlotly({
     
-
+# MAnual hover for now, figure this out later
+    
     edad[-c(2:6)] %>%
       pivot_longer(!`Rango Edad`, names_to = "genero", values_to = "n") %>%
       mutate(Percentage = round((n/sum(n))*100)) %>%
-      mutate(hover = paste(Percentage, "%")) %>%
+      mutate(manual = c(rep(1, 4), rep(14, 4), rep(33, 4), rep(34, 4), rep(13, 4), rep(4, 4), rep(2, 4))) %>%
+      mutate(hover = paste(manual, "%")) %>%
       plot_ly(x = ~`Rango Edad`,
               y = ~Percentage,
             type = "bar",
             name = ~genero,
-            text = ~hover,
+           # text = ~hover,
             color = ~genero,
             colors = c(Masculino = "#986538", Femenino = "#6bcbe3", `No binario` = "#f5dd3a", `No especifica` = "white")) %>%
       layout(barmode = "stack", bargap = 0.05,
