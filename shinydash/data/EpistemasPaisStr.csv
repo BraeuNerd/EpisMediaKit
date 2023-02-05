@@ -1,48 +1,50 @@
 ﻿Pais,region,code,Spotify,Ivoox
-Guatemala,Guatemala,GTM,3696,1002
-Estados Unidos,United States of America,USA,294,1595
-Corea del Sur,South Korea,KOR,1,133
-Colombia,Colombia,COL,213,147
-Alemania,Germany,DEU,361,108
-Bélgica,Belgium,BEL,34,95
-Francia,France,FRA,11,95
-España,Spain,ESP,25,61
-México,Mexico,MEX,194,67
-Uruguay,Uruguay,URY,19,48
-Costa Rica,Costa Rica,CRI,67,23
-El Salvador,El Salvador,SLV,147,22
-Rusia,Russia,RUS,0,24
-Brasil,Brazil,BRA,11,13
-Argentina,Argentina,ARG,61,12
-Canadá,Canada,CAN,28,31
+Guatemala,Guatemala,GTM,4075,1119
+Estados Unidos,United States of America,USA,359,1825
+Corea del Sur,South Korea,KOR,2,140
+Colombia,Colombia,COL,393,332
+Alemania,Germany,DEU,380,144
+Bélgica,Belgium,BEL,34,104
+Francia,France,FRA,22,140
+España,Spain,ESP,28,76
+México,Mexico,MEX,297,97
+Uruguay,Uruguay,URY,24,48
+Costa Rica,Costa Rica,CRI,70,23
+El Salvador,El Salvador,SLV,172,22
+Rusia,Russia,RUS,0,32
+Brasil,Brazil,BRA,13,18
+Argentina,Argentina,ARG,77,12
+Canadá,Canada,CAN,28,76
 Irlanda,Ireland,IRL,0,10
-Perú,Peru,PER,30,11
-Austria,Austria,AUT,70,8
-Chile,Chile,CHL,66,20
-Australia,Australia,AUS,10,6
-Gran Bretaña,United Kingdom,GBR,14,5
+Perú,Peru,PER,48,11
+Austria,Austria,AUT,71,8
+Chile,Chile,CHL,120,22
+Australia,Australia,AUS,12,8
+Gran Bretaña,United Kingdom,GBR,16,26
 South Africa,South Africa,ZAF,0,5
 Taiwán,Taiwan,TWN,0,4
-Ecuador,Ecuador,ECU,25,5
+Ecuador,Ecuador,ECU,35,5
 Belice,Belize,BEL,0,2
 Finlandia,Finland,FIN,0,2
-Honduras,Honduras,HND,10,2
+Honduras,Honduras,HND,30,2
 Nicaragua,Nicaragua,NIC,7,2
 Portugal,Portugal,PRT,0,2
-Venezuela,Venezuela,VEN,0,2
+Venezuela,Venezuela,VEN,0,4
 República Checa,Czech Republic,CZE,0,1
 Dinamarca,Denmark,DNK,0,1
 Italia,Italy,ITA,7,6
 Polonia,Poland,POL,0,1
 Singapur,Singapore,SGP,0,1
-Países Bajos,Netherlands,NLD,22,0
-Bolivia,Bolivia,BOL,31,34
-Suiza,Switzerland,CHE,7,0
+Países Bajos,Netherlands,NLD,23,22
+Bolivia,Bolivia,BOL,37,46
+Suiza,Switzerland,CHE,7,1
 Paraguay,Paraguay,PRY,3,0
 Tunisia,Tunisia,TUN,1,0
 Panamá,Panama,PAN,2,5
-República Dominicana,Dominican Republic,DOM,2,2
+República Dominicana,Dominican Republic,DOM,2,14
 Turquía,Turkey,TUR,2,0
-Suecia,Sweden,SWE,4,2
+Suecia,Sweden,SWE,8,5
 Bahamas,Bahamas,BS,0,1
+Noruega,Norway,NOR,1,3
+Japón,Japan,JPN,0,2
 UNKNOWN,UNKNOWN,,15,0
