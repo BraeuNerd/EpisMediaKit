@@ -41,7 +41,7 @@ edad <- read_csv("data/EpistemasEdad.csv")
 
 ui <- fluidPage(
   tags$h2(a(img(src = "epiSTEMas_Logo.png", href = "https://www.epistemas.com", height = 90, width = 90), "Epistemas Media Kit",href = "https://www.epistemas.com", style = "margin: 0; ")), 
-  tags$text("última actualización de datos: 29 de enero 2023", style = "font-size: 14px; color: #858585; "),
+  tags$text("última actualización de datos: 09 de octubre 2023", style = "font-size: 14px; color: #858585; "),
   
   setBackgroundColor(color = "#000000"),
   useShinydashboard(),

@@ -1,53 +1,57 @@
 ﻿Pais,region,code,Spotify,Ivoox
-Guatemala,Guatemala,GTM,4976,2059
-Estados Unidos,United States of America,USA,534,2618
-Corea del Sur,South Korea,KOR,11,140
-Colombia,Colombia,COL,587,978
-Alemania,Germany,DEU,440,184
-Bélgica,Belgium,BEL,34,208
-Francia,France,FRA,28,169
-España,Spain,ESP,44,114
-México,Mexico,MEX,581,272
-Uruguay,Uruguay,URY,28,48
-Costa Rica,Costa Rica,CRI,96,25
-El Salvador,El Salvador,SLV,205,22
-Rusia,Russia,RUS,0,42
-Brasil,Brazil,BRA,45,20
-Argentina,Argentina,ARG,125,22
-Canadá,Canada,CAN,31,149
+Guatemala,Guatemala,GTM,5895,2417
+Estados Unidos,United States of America,USA,664,3453
+Corea del Sur,South Korea,KOR,12,141
+Colombia,Colombia,COL,709,1445
+Alemania,Germany,DEU,477,230
+Bélgica,Belgium,BEL,34,358
+Francia,France,FRA,29,194
+España,Spain,ESP,51,147
+México,Mexico,MEX,788,421
+Uruguay,Uruguay,URY,31,49
+Costa Rica,Costa Rica,CRI,207,26
+El Salvador,El Salvador,SLV,221,22
+Rusia,Russia,RUS,0,50
+Brasil,Brazil,BRA,61,21
+Argentina,Argentina,ARG,156,23
+Canadá,Canada,CAN,38,155
 Irlanda,Ireland,IRL,0,10
-Perú,Peru,PER,86,14
-Austria,Austria,AUT,71,8
-Chile,Chile,CHL,181,25
-Australia,Australia,AUS,24,9
-Gran Bretaña,United Kingdom,GBR,21,29
+Perú,Peru,PER,126,23
+Austria,Austria,AUT,74,8
+Chile,Chile,CHL,239,27
+Australia,Australia,AUS,26,9
+Gran Bretaña,United Kingdom,GBR,39,29
 South Africa,South Africa,ZAF,0,5
-Taiwán,Taiwan,TWN,0,11
-Ecuador,Ecuador,ECU,75,8
+Taiwán,Taiwan,TWN,0,23
+Ecuador,Ecuador,ECU,101,10
 Belice,Belize,BEL,0,2
 Finlandia,Finland,FIN,0,8
-Honduras,Honduras,HND,59,4
+Honduras,Honduras,HND,86,4
 Nicaragua,Nicaragua,NIC,9,2
-Portugal,Portugal,PRT,0,6
-Venezuela,Venezuela,VEN,0,10
+Portugal,Portugal,PRT,1,6
+Venezuela,Venezuela,VEN,0,11
 República Checa,Czech Republic,CZE,0,1
 Dinamarca,Denmark,DNK,0,1
 Italia,Italy,ITA,7,7
 Polonia,Poland,POL,0,11
-Singapur,Singapore,SGP,0,1
-Países Bajos,Netherlands,NLD,24,30
-Bolivia,Bolivia,BOL,44,82
-Suiza,Switzerland,CHE,11,3
+Singapur,Singapore,SGP,0,119
+Países Bajos,Netherlands,NLD,25,51
+Bolivia,Bolivia,BOL,49,87
+Suiza,Switzerland,CHE,11,5
 Paraguay,Paraguay,PRY,5,0
 Tunisia,Tunisia,TUN,1,0
-Panamá,Panama,PAN,5,5
-República Dominicana,Dominican Republic,DOM,3,21
+Panamá,Panama,PAN,6,5
+República Dominicana,Dominican Republic,DOM,3,26
 Turquía,Turkey,TUR,2,0
-Suecia,Sweden,SWE,14,14
+Suecia,Sweden,SWE,15,14
 Bahamas,Bahamas,BS,0,1
-Noruega,Norway,NOR,1,12
+Noruega,Norway,NOR,1,18
 Japón,Japan,JPN,0,2
 India,India,IND,0,3
 Romania,Romania,ROU,0,1
 Hungría,Hungary,HUN,3,0
+Nueva Zelanda,New Zealand,NZL,0,4
+Ucrania,Ukraine,UKR,0,3
+Eslovaquia,Slovakia,SVK,0,2
+Puerto Rico,Puerto Rico,PRI,0,1
 UNKNOWN,UNKNOWN,,18,0
